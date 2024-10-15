@@ -1,6 +1,7 @@
 import type { DefaultTheme } from "vitepress";
 
 export const sidebar: DefaultTheme.Config["sidebar"] = {
+  //编程规范
   "/workflow/": [
     {
       text: "编程规范",
@@ -35,10 +36,15 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
       ],
     },
   ],
+  //提效工具
   "/efficiency/": [
     {
       text: "软件推荐与配置",
       items: [
+        {
+          text: "多平台软件",
+          link: "/efficiency/software/cross-platform",
+        },
         {
           text: "Windows 平台",
           link: "/efficiency/software/windows",
@@ -53,6 +59,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
         },
       ],
     },
+
     {
       text: "在线工具",
       link: "/efficiency/online-tools",
@@ -60,6 +67,32 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
     {
       text: "书签脚本",
       link: "/efficiency/bookmark-scripts",
+    },
+  ],
+  //笔记
+  "/note/": [
+    {
+      text: "2024年",
+      items: [
+        {
+          text: "xxxx笔记",
+          link: "/note/2024/xxxx",
+        },
+      ],
+    },
+  ],
+  "/pit/": [
+    {
+      text: "js",
+      link: "/pit/js",
+    },
+    {
+      text: "css",
+      link: "/pit/css",
+    },
+    {
+      text: "微信小程序",
+      link: "/pit/wechat",
     },
   ],
 };
