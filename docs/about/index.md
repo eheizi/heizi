@@ -3,6 +3,7 @@ aside: false
 ---
 
 # 黑子
+
 ```js
 I have a dream ...
 
@@ -10,10 +11,14 @@ I have a dream ...
 - 亲眼目睹那些令人叹为观止的自然奇观和人类文明的瑰宝。
                                                                         -- 小小程序猿
 ```
+
 **About:**
+
 - [黑子的博客](xxx)
+- [希音礼簿](xxx) : 一款便捷的礼物记账小程序(pc 兼容)，界面简洁，操作流畅，本地存储，你的收礼送礼井井有条。
 
 **Languages:**
+
  <div class="about-badge">
     <a href="https://www.w3.org/TR/html5/" target="_blank">
       <img src="https://img.shields.io/badge/HTML5-html5?logo=HTML5&logoColor=white&color=red" alt="HTML5 Badge" />
@@ -30,7 +35,6 @@ I have a dream ...
   </div>
 
 **Frameworks, Platforms and Libraries:**
-
 
   <div class="about-badge">
     <a href="https://www.webpackjs.com/" target="_blank">
@@ -65,8 +69,8 @@ I have a dream ...
     </a>
   </div>
 
-  **Editors and Tools:**
-  
+**Editors and Tools:**
+
 <div class="about-badge">
     <a href="https://code.visualstudio.com/" target="_blank" class="badge">
       <img src="https://img.shields.io/badge/VS%20Code-007ACC?logo=visual-studio-code&logoColor=white" alt="VS Code" />
@@ -102,4 +106,3 @@ I have a dream ...
 }
 
 </style>
-

@@ -81,6 +81,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
       ],
     },
   ],
+  //遇到的坑
   "/pit/": [
     {
       text: "js",
@@ -93,6 +94,40 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
     {
       text: "微信小程序",
       link: "/pit/wechat",
+    },
+  ],
+  //基础知识 八股文
+  "/Basics/": [
+    {
+      text: "JavaScript 理论基础",
+      items: [
+        {
+          text: "数据类型",
+          link: "/Basics/js/type",
+        },
+        { text: "引用类型的拷贝", link: "/Basics/js/clone" },
+        { text: "类型转换", link: "/Basics/js/conversions" },
+        { text: "原型和原型链", link: "/Basics/js/prototype" },
+        { text: "继承", link: "/Basics/js/inherit" },
+      ],
+    },
+    {
+      text: "ES6 常用知识点",
+      link: "/Basics/es6",
+    },
+    {
+      text: "HTML && CSS",
+      collapsed: false,
+      items: [
+        {
+          text: "HTML 理论基础",
+          link: "/Basics/html",
+        },
+        {
+          text: "CSS 理论基础",
+          link: "/Basics/css/",
+        },
+      ],
     },
   ],
 };

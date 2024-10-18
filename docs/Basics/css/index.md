@@ -27,15 +27,92 @@
 有两种主要的格式化上下文:
 
 - 块级格式化上下文（Block Formatting Context, BFC）
-- 行内格式化上下文（Inline Formatting Context, IFC）
-- 还有一些特定类型的格式化上下文如：Flex Formatting Context 和 Grid Formatting Context，它们基于特定的布局模型。
+- 行内格式化上下文（Inline Formatting Context, IFC） 在 **`IFC`** 中元素会沿着基线对齐并按从左到右的顺序排列
+- 表格单元格格式化上下文（Table Cell Formatting Context,TCFC）在 **`TCFC`** 中表格的列宽会根据单元格的内容自动调整，而不会出现列宽不一致的情况
+- 弹性盒子格式化上下文（Flexbox Formatting Context,FFC）在 **`FFC`** 中弹性盒子元素可以按照自己的尺寸和顺序进行排列。
+- 网格格式化上下文（Grid Formatting Context,GFC）在 **`GFC`** 中网格元素可以按照网格的行和列进行排列
   :::
 
 > **相关资料**
 >
 > - [Introduction to formatting contexts 格式化上下文简介 - CSS：层叠样式表 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_flow_layout/Introduction_to_formatting_contexts)
 
-### BFC 的布局规则
+### BFC 的特点
+
+- **`BFC`** 内部的元素会按块级盒子的标准垂直排列（不会出现元素重叠）
+- **同一个 `BFC` 中两个相邻 `Box` 的垂直边距 `margin` 会发生重叠**，在不同的 **`BFC`** 中则不会发生重叠
+- 防止外边距折叠，特别是在垂直方向上的 margin 合并。
+- **`BFC`** 可以包含浮动的子元素，防止浮动元素溢出。
+- 在 **`BFC`** 之间，浮动元素和普通元素互不干扰。
+  - 形成了 **`BFC`** 的区域不会与浮动元素区域重叠
+  - 计算 **`BFC`** 的高度时，浮动元素也会参与计算
+
+### BFC 怎么创建
+
+- 文档的根元素（**`html`**）
+- 浮动元素：**`float`** 不为 **`none`**
+- **`绝对定位元素：position`** 为 **`absolute`** 或 **`fixed`**
+- **`display`** 值为如下属性
+  - **`inline-block`** 行内块元素
+  - **`flow-root`** 块级元素盒
+  - **`table`** 该行为类似于 **`<table>`** 元素
+  - **`table-cell`** 该行为类似于 **`<td>`** 元素
+  - **`table-caption`** 该行为类似于 **`<caption>`**
+  - **`table-row`** 该行为类似于**` <tr`**> 元素
+  - **`table-row-group`** 该行为类似于 **`<tbody>`** 元素
+  - **`table-header-group`** 该行为类似于 **`<thead>`** 元素
+  - **`table-footer-group`** 该行为类似于 **`<tfoot>`** 元素
+  - **`inline-table`** 内联表格
+- **`display`** 值为 **`flex`** **`inline-flex`** **`grid`** **`inline-grid`** 的直接子元素，且它们本身都不是 **`flex、grid、`** **`table`** 容器
+- **`contain`** 值为 **`layout`**、**`content`** 或 **`paint`** 的元素
+- **`overflow`** 不为 **`visible`** 和 **`clip`** 的块元素
+- 多列容器：**`column-count`** 或 **`column-width`** 值不为 **`auto`**
+- **`column-span`** 值为 **`all`**
+
+### BFC 应用场景
+
+> 解决了什么问题
+
+- 浮动元素高度塌陷
+- 阻止元素被浮动元素覆盖
+- 防止 margin 重叠（塌陷）
+- 自适应布局
+
+## 你是怎么理解层叠上下文以及层叠顺序的？
+
+> 层叠上下文是 CSS 中的一个重要概念，涉及到元素在 z 轴上的排列和层级关系，决定哪些元素会覆盖其他元素。
+
+### 触发层叠上下文
+
+- **`position`** 属性为 **`absolute`** | **`relative`** ，并且 **`z-index`** 值不是 **`auto`** 或者 **`position`** 属性为 **`fixed`**（固定定位）或 **`sticky`**（粘滞定位）
+- **`display`** 属性为 **`flex`** 或 **`grid`** ，并且 **`z-index`** 值不是 **`auto。`**
+- **`opacity`** 值小于 1。
+- 以下任意属性值不为 **`none`** 的元素：
+  - **`transform`**
+  - **`filter`**
+  - **`backdrop-filter`**
+  - **`perspective`**
+  - **`clip-path`**
+  - **`mask `**/ **`mask-image`** / **`mask-border`**
+- **`contain`** 属性为 **`paint、layout`** 或 **`content。`** -**` mix-blend-mode`** 属性值不为 **`normal`** 的元素
+- **`isolation`** 属性值为 **`isolate`** 的元素
+
+### 层叠顺序
+
+在一个层叠上下文中，元素的堆叠顺序遵循以下规则：
+
+- 背景和边框：背景和边框会在堆叠顺序的底部。
+- 负 z-index 元素：具有负 z-index 的元素会被放置在当前上下文的底部。
+- 非定位元素：没有 position 属性或 z-index 值的元素按文档流的顺序进行堆叠。
+- 定位元素：具有 position 和 z-index 的元素按 z-index 值进行堆叠，值越大的元素越在上面。
+
+![层叠顺序](./image/2016-01-09_211116.png)
+
+> 参考：
+>
+> [深入理解 CSS 中的层叠上下文和层叠顺序](http://www.zhangxinxu.com/wordpress/?p=5115)
+>
+> [层叠上下文 - CSS：层叠样式表 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context)
 
 ## specificity(权重)
 
@@ -272,4 +349,89 @@ flex: 2 2 10%;
   :root {
   }
 }
+```
+
+## 圣杯布局以及双飞翼布局你了解吗？
+
+- 三栏布局，中间一栏最先加载和渲染（内容最重要，这就是为什么还需要了解这种布局的原因）。
+- 两侧内容固定，中间内容随着宽度自适应。
+- 一般用于 PC 网页。
+- 使用 float 布局。
+- 两侧使用 margin 负值，以便和中间内容横向重叠。
+- 防止中间内容被两侧覆盖，圣杯布局用 padding ，双飞翼布局用 margin 。
+
+### 圣杯布局
+
+```html
+<style>
+  #container {
+    padding-left: 200px;
+    padding-right: 150px;
+    overflow: auto;
+  }
+  #container p {
+    float: left;
+  }
+  .center {
+    width: 100%;
+    background-color: lightcoral;
+  }
+  .left {
+    width: 200px;
+    position: relative;
+    left: -200px;
+    margin-left: -100%;
+    background-color: lightcyan;
+  }
+  .right {
+    width: 150px;
+    margin-right: -150px;
+    background-color: lightgreen;
+  }
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>
+<div id="container" class="clearfix">
+  <p class="center">我是中间</p>
+  <p class="left">我是左边</p>
+  <p class="right">我是右边</p>
+</div>
+```
+
+### 双飞翼布局
+
+```html
+<style>
+  .float {
+    float: left;
+  }
+  #main {
+    width: 100%;
+    height: 200px;
+    background-color: lightpink;
+  }
+  #main-wrap {
+    margin: 0 190px 0 190px;
+  }
+  #left {
+    width: 190px;
+    height: 200px;
+    background-color: lightsalmon;
+    margin-left: -100%;
+  }
+  #right {
+    width: 190px;
+    height: 200px;
+    background-color: lightskyblue;
+    margin-left: -190px;
+  }
+</style>
+<div id="main" class="float">
+  <div id="main-wrap">main</div>
+</div>
+<div id="left" class="float">left</div>
+<div id="right" class="float">right</div>
 ```

@@ -10,10 +10,10 @@ editLink: true
 lastUpdated: true
 hero:
   name: 黑子的博客
-  text: Hei Zi 的成长之路
+  text: Xin 的成长之路
   tagline: Stay foolish, Stay hungry.
   image:
-    src: https://notes.fe-mm.com/logo.png
+    src: ./.vitepress/blog-logo-bg.png
     alt: 背景图
   actions:
     - theme: brand
@@ -53,13 +53,23 @@ features:
     details: '<small class="bottom-small">一个想躺平的小开发</small>'
 ---
 
+<script setup>
+import MFriends from './home/MFriends.vue'
+</script>
+
+<ClientOnly>
+  <MFriends/>
+</ClientOnly>
+
 <style>
   /*爱的魔力转圈圈*/
 .m-home-layout .image-src:hover {
   transform: translate(-50%, -50%) rotate(666turn);
   transition: transform 59s 1s cubic-bezier(0.3, 0, 0.8, 1);
 }
-
+.m-home-layout .image-src{
+  border-radius: 50%;
+}
 .m-home-layout .details small {
   opacity: 0.8;
 }

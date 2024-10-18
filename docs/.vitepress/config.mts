@@ -11,7 +11,7 @@ export default defineConfig({
   lastUpdated: true,
   srcExclude: ["**/README.md", "**/TODO.md"],
   themeConfig: {
-    logo: "https://notes.fe-mm.com/logo.png",
+    logo: "./.vitepress/blog-logo-bg.svg",
     // https://vitepress.dev/reference/default-theme-config
     nav,
     sidebar,
@@ -21,8 +21,8 @@ export default defineConfig({
       label: "目录",
     },
     footer: {
-      message: "如有转载或 CV 的请标注本站原文地址",
-      copyright: "Copyright © 2024-present HEIZI 赣ICP备2024038133号-2",
+      message: "Copyright © 2024-present HEIZI",
+      copyright: " 赣ICP备2024038133号-2",
     },
     lastUpdated: {
       text: "最后更新于",

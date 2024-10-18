@@ -1,6 +1,7 @@
-MITT 在vue3中$on，$off 和 $once 实例方法已被移除，组件实例不再实现事件触发接口，因此大家熟悉的EventBus便无法使用了。然而我们习惯了使用EventBus，对于这种情况我们可以使用Mitt库（其实就是我们视频中讲的发布订阅模式的设计）
+MITT 在 vue3 中$on，$off 和 $once 实例方法已被移除，组件实例不再实现事件触发接口，因此大家熟悉的 EventBus 便无法使用了。然而我们习惯了使用 EventBus，对于这种情况我们可以使用 Mitt 库（其实就是我们视频中讲的发布订阅模式的设计）
 
-postcss-px-to-viewport vite中已经内联了postcss所以并不需要额外的创建 postcss.config.js文件
+postcss-px-to-viewport vite 中已经内联了 postcss 所以并不需要额外的创建 postcss.config.js 文件
+
 ```js
  css: {
     postcss: {

@@ -10,3 +10,9 @@ export interface NavLink {
   /** 徽章标注 */
   badge?: string;
 }
+export interface NavData {
+  title: string;
+  tag?: string;
+  noIcon?: boolean;
+  items: NavLink[];
+}

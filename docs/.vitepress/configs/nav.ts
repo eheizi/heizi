@@ -21,7 +21,7 @@ export const nav: DefaultTheme.Config["nav"] = [
       },
     ],
   },
-  { text: "小游戏", link: "/games/index" },
+  // { text: "小游戏", link: "/games/index" },
   {
     text: "workflow",
     items: [
@@ -57,7 +57,7 @@ export const nav: DefaultTheme.Config["nav"] = [
       },
     ],
   },
-  { text: "值得记录", link: "/life/index" },
+  // { text: "值得记录", link: "/life/index" },
   {
     text: "笔记",
     items: [
