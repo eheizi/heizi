@@ -6,7 +6,7 @@ on:
     types: [build-and-deploy]
   push:
     branches:
-      - master
+      - gh-pages
     paths:
       - "docs/**"
       - "package.json"
