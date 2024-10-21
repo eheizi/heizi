@@ -66,6 +66,7 @@ jobs:
           commit-message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
           # 指定仓库
           repository-name: eheizi/heizi
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           # GitHub Pages 读取的分支
           branch: gh-pages
           # 静态文件所在目录
