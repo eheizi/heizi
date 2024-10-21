@@ -70,7 +70,7 @@ jobs:
       - name: Build blog project
         env:
           APP_BASE_PATH: /eheizi/heizi
-        run: pnpm run build
+        run: pnpm docs:build
 
         # 资源拷贝
       - name: Build with Jekyll
