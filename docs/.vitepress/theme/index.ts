@@ -8,6 +8,7 @@ import { basename } from "node:path";
 let homePageStyle: HTMLStyleElement | undefined;
 export default {
   extends: DefaultTheme,
+  outDir: "../dist",
   base: "/heizi/",
   enhanceApp({ app, router }) {
     const pinia = createPinia();
