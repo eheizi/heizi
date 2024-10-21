@@ -11,9 +11,8 @@ on:
       - "docs/**"
       - "package.json"
 
-permissions:
-  contents: read
-  pages: write
+# 设置权限
+permissions: write-all
 
 env:
   TZ: Asia/Shanghai
@@ -62,7 +61,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: github-pages
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
