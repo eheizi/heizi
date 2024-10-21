@@ -12,7 +12,7 @@ export default defineConfig({
   lastUpdated: true,
   srcExclude: ["**/README.md", "**/TODO.md"],
   themeConfig: {
-    logo: "./.vitepress/blog-logo-bg.svg",
+    logo: "/blog-logo-bg.svg",
     // https://vitepress.dev/reference/default-theme-config
     nav,
     sidebar,

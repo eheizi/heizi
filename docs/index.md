@@ -13,7 +13,7 @@ hero:
   text: Xin 的成长之路
   tagline: Stay foolish, Stay hungry.
   image:
-    src: ./.vitepress/blog-logo-bg.png
+    src: /blog-logo-bg.png
     alt: 背景图
   actions:
     - theme: brand
