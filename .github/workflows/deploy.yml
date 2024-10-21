@@ -6,7 +6,7 @@ on:
     types: [build-and-deploy]
   push:
     branches:
-      - main
+      - master
     paths:
       - "docs/**"
       - "package.json"
