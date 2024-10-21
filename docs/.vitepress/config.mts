@@ -8,6 +8,7 @@ export default defineConfig({
   lang: "zh-CN",
   head,
   cleanUrls: true,
+  base: "/heizi/",
   lastUpdated: true,
   srcExclude: ["**/README.md", "**/TODO.md"],
   themeConfig: {

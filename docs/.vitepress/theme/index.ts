@@ -8,11 +8,9 @@ import { basename } from "node:path";
 let homePageStyle: HTMLStyleElement | undefined;
 export default {
   extends: DefaultTheme,
-  outDir: "../dist",
-  base: "/heizi/",
+
   enhanceApp({ app, router }) {
     const pinia = createPinia();
-    console.log(typeof window);
     if (typeof window !== "undefined") {
       // 使用插件...
       import("pinia-plugin-persistedstate").then(({ createPersistedState }) => {
