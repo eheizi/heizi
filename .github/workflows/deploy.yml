@@ -36,9 +36,12 @@ jobs:
           fetch-depth: 0
 
       # 安装 pnpm
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: latest
+          # version: 9
+          run_install: false
       # 设置 node 版本
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -60,7 +63,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
-          commit-message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
+          commit-message: Deploying to main from @ ${{ github.sha }} 🚀
           # 指定仓库
           repository-name: eheizi/heizi
           # GitHub Pages 读取的分支
