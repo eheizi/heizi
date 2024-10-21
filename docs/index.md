@@ -58,7 +58,7 @@ import MFriends from './home/MFriends.vue'
 </script>
 
 <ClientOnly>
-  <MFriends/>
+  <MFriends/> 
 </ClientOnly>
 
 <style>
