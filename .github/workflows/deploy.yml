@@ -72,25 +72,31 @@ jobs:
           APP_BASE_PATH: /eheizi/heizi
         run: pnpm docs:build
 
-        # 资源拷贝
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./docs/.vitepress/dist
-          destination: ./_site
-
-        # 上传 _site 的资源，用于后续部署
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Copy files
+        run: cp README.md ./dist/
 
   # 部署任务
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    # 服务器环境：最新版 ubuntu
     runs-on: ubuntu-latest
     needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # 部署
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          commit-message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
+          # 指定仓库
+          repository-name: eheizi/heizi
+          # GitHub Pages 读取的分支
+          branch: main
+          # 静态文件所在目录
+          folder: dist
