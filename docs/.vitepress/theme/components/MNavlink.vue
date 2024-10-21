@@ -7,7 +7,7 @@ import { NavLink } from '../types'
 import { useMainStore } from '../stores/use-main-store'
 const props = defineProps<{
     icon?: NavLink['icon']
-    title?: NavLink['title']
+    title: NavLink['title']
     desc?: NavLink['desc']
     link: NavLink['link']
     badge?: NavLink['badge']

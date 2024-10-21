@@ -46,4 +46,12 @@ export default defineConfig({
     darkModeSwitchTitle: "切换到深色模式",
     socialLinks: [{ icon: "github", link: "https://github.com/eheizi" }],
   },
+  ignoreDeadLinks: [
+    "./about/", // 忽略精确的 URL
+    /^https?:\/\/localhost/, // 忽略所有 localhost 链接
+    /\/repl\//, // 忽略所有包含 "/repl/" 的链接
+    (url) => {
+      return url.toLowerCase().includes("ignore"); // 自定义函数，忽略所有包含 "ignore" 的链接
+    },
+  ],
 });
