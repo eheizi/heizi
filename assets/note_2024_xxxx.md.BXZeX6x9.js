@@ -1,0 +1,1 @@
+import{_ as e,l as t,k as a}from"./chunks/framework.CrgDeNu1.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"note/2024/xxxx.md","filePath":"note/2024/xxxx.md","lastUpdated":1729002269000}'),o={name:"note/2024/xxxx.md"};function x(n,r,s,c,d,p){return a(),t("div")}const l=e(o,[["render",x]]);export{i as __pageData,l as default};
