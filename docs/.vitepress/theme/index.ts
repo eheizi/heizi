@@ -5,7 +5,6 @@ import MNavLinks from "./components/MNavLinks.vue";
 import { useMainStore } from "./stores/use-main-store";
 import { watch } from "vue";
 import { basename } from "node:path";
-const APP_BASE_PATH = basename(process.env.APP_BASE_PATH || "");
 let homePageStyle: HTMLStyleElement | undefined;
 export default {
   extends: DefaultTheme,
