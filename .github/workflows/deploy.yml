@@ -32,7 +32,6 @@ concurrency:
 jobs:
   # 构建任务
   build:
-
     runs-on: ubuntu-latest
 
     # node v20 运行
@@ -71,7 +70,7 @@ jobs:
       - name: Build blog project
         run: |
           echo ${{ github.workspace }}
-          pnpm build
+          pnpm docs:build
 
         # 资源拷贝
       - name: Build with Jekyll
@@ -95,4 +94,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
