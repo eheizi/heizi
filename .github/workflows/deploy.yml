@@ -62,7 +62,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
           commit-message: Deploying to gh-pages from @ ${{ github.sha }} 🚀
           # 指定仓库
           repository-name: eheizi/heizi
