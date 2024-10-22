@@ -75,10 +75,16 @@ let NAV_DATA: NavData[] = [
     title: "黑子的站点导航",
     items: [
       {
-        icon: "/logo.png",
+        icon: "/blog-logo-bg.png",
         title: "前端日常笔记",
         desc: "日常笔记记录（零零散散啥都记系列）",
-        link: "https://github.com/maomao1996/daily-notes",
+        link: "https://eheizi.github.io/heizi/note/",
+      },
+      {
+        icon: "https://qwerty.fe-mm.com/assets/logo-95f41da4.svg",
+        title: "Qwerty Learner",
+        desc: "为键盘工作者设计的单词与肌肉记忆锻炼软件",
+        link: "https://qwerty.fe-mm.com/",
       },
     ],
   },

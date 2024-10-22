@@ -56,10 +56,10 @@ features:
 <script setup>
 import MFriends from './home/MFriends.vue'
 </script>
-
+<!--
 <ClientOnly>
-  <MFriends/> 
-</ClientOnly>
+  <MFriends/>
+</ClientOnly> -->
 
 <style>
   /*爱的魔力转圈圈*/

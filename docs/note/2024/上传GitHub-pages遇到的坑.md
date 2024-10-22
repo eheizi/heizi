@@ -13,7 +13,7 @@
 
 > 参考了很多大佬的博客，最终选择使用`VitePress`搭建(快速，使用`vue`、`vite`，最主要的是好看！！！)
 
-博客内容很大部分参考了[茂茂物语](https://notes.fe-mm.com/)
+<!-- 博客内容很大部分参考了 [茂茂物语](https://notes.fe-mm.com/) -->
 
 ## 使用 GitHub pages 部署网址
 
@@ -125,3 +125,10 @@ jobs:
   ],
 }
 ```
+
+:::tip 参考：
+
+- [vitePress](https://vitepress.dev/zh/)
+- [茂茂物语](https://notes.fe-mm.com/)
+
+:::
