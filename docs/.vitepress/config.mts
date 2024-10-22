@@ -6,7 +6,7 @@ export default defineConfig({
   title: "鑫",
   description: "欢迎来到我的博客",
   lang: "zh-CN",
-  head,
+  head: head,
   cleanUrls: true,
   base: "/heizi/",
   lastUpdated: true,

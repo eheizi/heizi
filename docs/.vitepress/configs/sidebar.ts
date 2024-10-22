@@ -75,8 +75,8 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
       text: "2024年",
       items: [
         {
-          text: "xxxx笔记",
-          link: "/note/2024/xxxx",
+          text: "这是一篇记录博客诞生的笔记",
+          link: "/note/2024/上传GitHub-pages遇到的坑",
         },
       ],
     },
