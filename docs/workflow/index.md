@@ -45,6 +45,7 @@ description: 黑子的编程规范（命名规范与项目结构、Git 提交规
 - 函数使用小驼峰式命名法。🌰 `function getUserInfo() {}`
 - 对象 `key` 使用小驼峰式命名法。🌰 `const user = { userName: 'heizi' }`
 - 路由 `path` 使用短横线命名法。🌰 `path: '/user-info'`
+- 形参使用`_` + 小驼峰式命名法。🌰 `function (_userId) {}`
 
 #### `CSS` 命名规范
 
