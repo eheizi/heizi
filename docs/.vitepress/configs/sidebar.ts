@@ -109,6 +109,7 @@ export const sidebar: DefaultTheme.Config["sidebar"] = {
         { text: "类型转换", link: "/Basics/js/conversions" },
         { text: "原型和原型链", link: "/Basics/js/prototype" },
         { text: "继承", link: "/Basics/js/inherit" },
+        { text: "作用域", link: "/Basics/js/scope" },
       ],
     },
     {

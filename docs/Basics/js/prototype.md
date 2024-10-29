@@ -108,6 +108,7 @@ Reflect.getPrototypeOf(person) === Person.prototype; // true
 每个对象都拥有一个原型对象，通过 `__proto__` 指针指向上一个原型 ，并从中继承方法和属性，同时原型对象也可能拥有原型，这样一层一层，最终指向 `null`。这个**链式结构**被称为**原型链**。
 
 ![prototype-chain](./image/prototype/prototype-chain.jpg)
+![yuanxinglian](./image/prototype/yuanxinglian.png)
 
 ::: tip `Object.prototype.__proto__ === null`
 `Object.prototype` 是 `JavaScript` 中所有对象的原型。其定义了所有 `JavaScript` 对象都可以使用的属性和方法，例如 `toString()` `hasOwnProperty()` 等<br />
